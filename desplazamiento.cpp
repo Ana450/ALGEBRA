@@ -2,17 +2,6 @@
 #include <string>
 using namespace std;
 
-int modulo (int a, int n){
-    int  q = a / n;
-    int r = a - (q * n);
-    
-    if (r < 0){
-        q--;
-        r = a - (q * n);
-    }          
-    return r;
-}
-
 class cesar{
     string alfabeto = "abcdefghijklmnopqrstuvwxyz";
     int k = 0;
@@ -32,7 +21,7 @@ class cesar{
                     if (text[i] == alfabeto[j]){
                         k = j + clave;
                         if (k >= alfabeto.size()){
-                            k = modulo(k,alfabeto.size());
+                            k = k - alfabeto.size();
                         }
                         nuevo.push_back(alfabeto[k]);
                         k=0;  
@@ -50,7 +39,7 @@ class cesar{
                     if (nuevo[i] == alfabeto[j]){
                         k = j - clave;
                         if (k < 0){
-                            k = modulo(k,alfabeto.size());
+                            k = alfabeto.size() + k;
                         }
                         nuevo_2.push_back(alfabeto[k]);
                         k = 0;  
