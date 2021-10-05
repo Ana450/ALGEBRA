@@ -27,7 +27,6 @@ int mcd(int a, int b){
     }
   
   cout << "mcd = " << b << endl;
-  cout << "q = " << q << endl;
   cout << "x = " << x_2 << endl;
   cout << "y = " <<y_2 << endl;
   
